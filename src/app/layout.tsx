@@ -22,7 +22,7 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-      <body className={cn(roboto.className, "relative dark")}>
+      <body className={cn(roboto.className, "relative")}>
         <Navbar />
         {children}
       </body>

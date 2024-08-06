@@ -19,7 +19,9 @@ const Navbar = () => {
     <div className="container my-4 flex justify-between items-center mb-8">
       <div className="flex h-full  gap-4">
         <NavLink href="/" label="home" />
+        <NavLink href="/work" label="work" />
         <NavLink href="/projects" label="projects" />
+        <NavLink href="/about" label="about" />
       </div>
       <Button
         size="sm"

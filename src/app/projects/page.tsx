@@ -1,23 +1,35 @@
 import DesktopDemo from "@/components/DesktopDemo";
-import Link from "next/link";
-import React from "react";
+import InlineLink from "@/components/InlineLink";
+import { Montserrat } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
 
 const page = () => {
   return (
-    <main className="container flex flex-col gap-4 mb-16">
-      <h1 className="text-3xl font-bold">Projects</h1>
+    <main className="container flex flex-col gap-8 mb-16 text-neutral-500">
+      <h1
+        className={cn(
+          "text-3xl font-bold text-neutral-800",
+          montserrat.className
+        )}
+      >
+        Projects
+      </h1>
 
       <div className="flex flex-col gap-12 my-8">
         <div className="flex flex-col">
-          <h3 className="text-xl font-semibold">Case Study Coffee Lounge</h3>
+          <h3 className="text-xl font-semibold text-neutral-800">
+            Case Study Coffee Lounge
+          </h3>
           <p>
-            A website for a local coffee shop in Phoenix, Arizona.{" "}
-            <Link
+            A website for Youtuber and wood worker William Douglas that is local
+            to me and started a coffee shop in Phoenix. We got in touch and have
+            worked together on building the website the company needs.
+            <InlineLink
               href="/projects/case-study"
-              className="underline hover:no-underline text-indigo-500"
-            >
-              Learn more about the project here.
-            </Link>
+              label="Learn more about the project here."
+            />
           </p>
           <DesktopDemo
             className="mt-4"
@@ -26,15 +38,18 @@ const page = () => {
         </div>
 
         <div className="flex flex-col">
-          <h3 className="text-xl font-semibold">Purpose After Sports</h3>
+          <h3 className="text-xl font-semibold text-neutral-800">
+            Purpose After Sports
+          </h3>
           <p>
-            A website for ex atheletes to stay fit.{" "}
-            <Link
+            A website that provides resources and a community for former
+            athletes by a mutual friend of mine. This website is a great
+            resource for former athletes to maintain their fitness and
+            well-being even after they are done playing sports.
+            <InlineLink
               href="/projects/purpose-after-sports"
-              className="underline hover:no-underline text-indigo-500"
-            >
-              Learn more about the project here.
-            </Link>
+              label="Learn more about the project here."
+            />
           </p>
           <DesktopDemo
             className="mt-4"

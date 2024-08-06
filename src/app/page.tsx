@@ -1,12 +1,17 @@
 import DesktopDemo from "@/components/DesktopDemo";
 import Image from "next/image";
+import InlineLink from "@/components/InlineLink";
 import Link from "next/link";
+import { Montserrat } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
 
 export default function Home() {
   return (
     <>
       <div className="container -mt-4 md:mt-0">
-        <h1 className="text-3xl font-bold mb-4">
+        <h1 className={cn("text-3xl font-bold mb-4", montserrat.className)}>
           Hello, I’m <span className="text-indigo-500">Aaron Soto</span>
         </h1>
         <div className="w-full h-[40vh] md:h-[600px] mb-4 rounded-lg relative overflow-hidden group">
@@ -50,12 +55,10 @@ export default function Home() {
               I created a dynamic website for a local coffee shop in Phoenix,
               Arizona, helping them to enhance their online presence and
               streamline business operations.{" "}
-              <Link
+              <InlineLink
                 href="/projects/case-study"
-                className="underline hover:no-underline text-indigo-500"
-              >
-                Learn more about the project here.
-              </Link>
+                label="Learn more about the project here."
+              />
             </p>
             <DesktopDemo
               className="mt-4"
@@ -67,12 +70,10 @@ export default function Home() {
             <p className="text-muted-foreground">
               This website provides resources and a community for former
               athletes to maintain their fitness and well-being.{" "}
-              <Link
+              <InlineLink
                 href="/projects/purpose-after-sports"
-                className="underline hover:no-underline text-indigo-500"
-              >
-                Learn more about the project here.
-              </Link>
+                label="Learn more about the project here."
+              />
             </p>
             <DesktopDemo
               className="mt-4"

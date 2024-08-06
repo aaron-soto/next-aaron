@@ -81,3 +81,12 @@ html {
 body {
   overscroll-behavior: none;
 }
+
+.underline-thick {
+  text-decoration: underline;
+  text-decoration-thickness: 2px; /* Adjust thickness as needed */
+  text-decoration-color: #d8d9ff;
+}
+.underline-thick:hover {
+  text-decoration-color: #6366f1;
+}
