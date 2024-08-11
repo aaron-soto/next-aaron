@@ -24,14 +24,16 @@ const NavLink = ({ href, label }: any) => {
 const Navbar = () => {
   return (
     <div className="container my-4 flex justify-between items-center mb-8">
-      <span
-        className={cn(
-          montserrat.className,
-          "text-xl font-black text-[#ff6e41]"
-        )}
-      >
-        Aaron Soto
-      </span>
+      <Link href="/">
+        <span
+          className={cn(
+            montserrat.className,
+            "text-xl font-black text-[#ff6e41]"
+          )}
+        >
+          Aaron Soto
+        </span>
+      </Link>
       <div className="flex h-full  gap-4">
         <NavLink href="/" label="Home" />
         <NavLink href="/contact" label="Contact" />
