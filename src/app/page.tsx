@@ -54,10 +54,10 @@ export default function Home() {
               opportunity as a frontend developer.
             </p>
             <p className="">
-              With experience as a consultant, I’ve developed and designed
-              websites using a variety of technologies, including Next.js,
-              Angular, Node.js, and .NET. My adaptability and quick learning
-              ability have been key in mastering new tech stacks when needed.
+              As a consultant, I have developed and designed websites using a
+              variety of technologies, including Next.js (TypeScript), Angular,
+              Node.js, and .NET. My ability to quickly adapt and learn has been
+              essential in mastering new tech stacks as needed.
             </p>
           </div>
         </div>

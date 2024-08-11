@@ -55,7 +55,7 @@ const Testimonials = () => {
         <div className="flex flex-col items-center w-full">
           <div
             className="w-full relative max-w-2xl mx-auto flex flex-col text-xl justify-center items-center text-center overflow-hidden"
-            style={{ height: "200px" }}
+            style={{ height: "230px" }}
           >
             <AnimatePresence initial={false}>
               <motion.div
