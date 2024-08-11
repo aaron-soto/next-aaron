@@ -1,18 +1,30 @@
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import InlineLink from "@/components/InlineLink";
-import Link from "next/link";
 import { Montserrat } from "next/font/google";
-import React from "react";
-import RotatingCircle from "@/components/RotatingCircle";
+import NavigationBackButton from "@/components/NavigationBackButton";
 import { cn } from "@/lib/utils";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
 
 const page = () => {
   return (
-    <main className="container flex flex-col gap-8 mb-16 text-neutral-600">
-      <h1 className={cn("text-3xl font-bold text-white", montserrat.className)}>
-        About
-      </h1>
+    <main
+      className={cn(
+        "container flex flex-col items-start gap-8 mb-16 text-neutral-600"
+      )}
+    >
+      <div className="flex gap-4 items-center">
+        <NavigationBackButton />
+        <h1
+          className={cn(
+            "text-3xl font-bold text-neutral-800",
+            montserrat.className
+          )}
+        >
+          About
+        </h1>
+      </div>
 
       <p>
         I&apos;m a former Army Ranger turned software developer. I have done

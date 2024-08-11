@@ -18,7 +18,7 @@ const InlineLink = ({ href, label, target }: InlineLinkProps) => {
         href={href}
       >
         {label}
-        <ArrowUpRight size={24} className="inline -mt-[2px]" />
+        {/* <ArrowUpRight size={24} className="inline -mt-[2px]" /> */}
       </Link>{" "}
     </>
   );

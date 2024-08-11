@@ -11,16 +11,17 @@ const config = {
   prefix: "",
   theme: {
     container: {
-      center: true,
+      center: true, // Center the container by default
       padding: {
-        DEFAULT: ".5rem",
-        sm: "2rem",
-        lg: "3rem",
-        xl: "4rem",
-        "2xl": "5rem",
+        DEFAULT: "0.5rem", // Default padding for all breakpoints
+        sm: "1rem", // Smaller padding for the 'sm' breakpoint
       },
       screens: {
-        "2xl": "870px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
       },
     },
     extend: {

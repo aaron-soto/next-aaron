@@ -1,6 +1,7 @@
 import DesktopDemo from "@/components/DesktopDemo";
 import InlineLink from "@/components/InlineLink";
 import { Montserrat } from "next/font/google";
+import NavigationBackButton from "@/components/NavigationBackButton";
 import { cn } from "@/lib/utils";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
@@ -8,14 +9,17 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
 const page = () => {
   return (
     <main className="container flex flex-col gap-8 mb-16 text-neutral-500">
-      <h1
-        className={cn(
-          "text-3xl font-bold text-neutral-800",
-          montserrat.className
-        )}
-      >
-        Projects
-      </h1>
+      <div className="flex gap-4 items-center">
+        <NavigationBackButton />
+        <h1
+          className={cn(
+            "text-3xl font-bold text-neutral-800",
+            montserrat.className
+          )}
+        >
+          Projects
+        </h1>
+      </div>
 
       <div className="flex flex-col gap-12 my-8">
         <div className="flex flex-col">

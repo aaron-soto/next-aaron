@@ -1,12 +1,19 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Montserrat } from "next/font/google";
 import React from "react";
 import { Sun } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "700", "900"],
+});
 
 const NavLink = ({ href, label }: any) => {
   return (
     <Link
-      className="hover:underline underline-offset-2 hover:text-indigo-600"
+      className="hover:underline underline-offset-2 hover:text-[#4801FF]"
       href={href}
     >
       {label}
@@ -17,20 +24,18 @@ const NavLink = ({ href, label }: any) => {
 const Navbar = () => {
   return (
     <div className="container my-4 flex justify-between items-center mb-8">
-      <div className="flex h-full  gap-4">
-        <NavLink href="/" label="home" />
-        <NavLink href="/work" label="work" />
-        <NavLink href="/projects" label="projects" />
-        <NavLink href="/about" label="about" />
-      </div>
-      <Button
-        size="sm"
-        className="flex gap-4 items-center !border-green-500/50 text-green-500"
-        variant="outline"
+      <span
+        className={cn(
+          montserrat.className,
+          "text-xl font-black text-[#ff6e41]"
+        )}
       >
-        Open to Work
-        <div className="h-2.5 w-2.5 before:absolute bg-green-500 rounded-full relative before:h-full before:left-0 before:w-full before:bg-green-500 before:animate-ping before:delay-75 before:rounded-full "></div>
-      </Button>
+        Aaron Soto
+      </span>
+      <div className="flex h-full  gap-4">
+        <NavLink href="/" label="Home" />
+        <NavLink href="/contact" label="Contact" />
+      </div>
     </div>
   );
 };

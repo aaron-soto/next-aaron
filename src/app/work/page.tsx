@@ -1,5 +1,6 @@
 import InlineLink from "@/components/InlineLink";
 import { Montserrat } from "next/font/google";
+import NavigationBackButton from "@/components/NavigationBackButton";
 import React from "react";
 import { cn } from "@/lib/utils";
 
@@ -8,14 +9,17 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
 const Page = () => {
   return (
     <main className="container flex flex-col gap-8 mb-16 text-neutral-500">
-      <h1
-        className={cn(
-          "text-3xl font-bold text-neutral-800",
-          montserrat.className
-        )}
-      >
-        Work
-      </h1>
+      <div className="flex gap-4 items-center">
+        <NavigationBackButton />
+        <h1
+          className={cn(
+            "text-3xl font-bold text-neutral-800",
+            montserrat.className
+          )}
+        >
+          Work
+        </h1>
+      </div>
 
       <p>
         After graduating high school in 2013, I joined the Army and went through
