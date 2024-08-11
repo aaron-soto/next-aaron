@@ -1,14 +1,23 @@
+"use client";
+
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { Montserrat } from "next/font/google";
 import React from "react";
+import { analytics } from "@/lib/firebase/firebase";
 import { cn } from "@/lib/utils";
+import { logEvent } from "firebase/analytics";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
 
 const RecentWork = () => {
+  const trackLinkClick = (project: string) => {
+    if (analytics) {
+      logEvent(analytics, "recent_work_click", { project });
+    }
+  };
   return (
     <div className="container py-24">
       <div className="flex flex-col items-center gap-6">
@@ -44,7 +53,11 @@ const RecentWork = () => {
                 className="border-2 border-white flex gap-4"
                 asChild
               >
-                <Link href="https://casestudycoffeelounge.com" target="_blank">
+                <Link
+                  href="https://casestudycoffeelounge.com"
+                  target="_blank"
+                  onClick={() => trackLinkClick("case-study")}
+                >
                   View Website <ArrowRight size={24} />
                 </Link>
               </Button>
@@ -70,6 +83,7 @@ const RecentWork = () => {
                 <Link
                   href="https://purpose-after-sports.vercel.app/"
                   target="_blank"
+                  onClick={() => trackLinkClick("purpose-after-sports")}
                 >
                   View Website <ArrowRight size={24} />
                 </Link>

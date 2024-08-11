@@ -89,9 +89,9 @@ const Testimonials = () => {
                 key={index}
                 onClick={() => setCurrentTestimonial(index)}
                 className={cn(
-                  "w-3 h-3 rounded-full relative after:inset-0 after:absolute after:border-white after:border-[2px] after:rounded-full after:transition-all after:duration-200 cursor-pointer transition-all duration-200",
+                  "w-2 h-2 rounded-full relative after:inset-0 after:absolute after:border-white after:border-[2px] after:rounded-full after:transition-all after:duration-200 cursor-pointer transition-all duration-200",
                   currentTestimonial === index
-                    ? "bg-[#4801FF] after:-inset-[4px] after:border-[2px] after:absolute after:rounded-full after:border-[#4801FF]"
+                    ? "bg-[#ff6e41] after:-inset-[4px] after:border-[3px] after:absolute after:rounded-full after:border-[#4801FF]"
                     : "bg-neutral-300"
                 )}
               ></div>

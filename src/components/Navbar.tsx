@@ -21,6 +21,21 @@ const NavLink = ({ href, label }: any) => {
   );
 };
 
+function ResumeLink() {
+  return (
+    <Link
+      href="/files/resume.pdf"
+      passHref
+      legacyBehavior
+      className="hover:underline underline-offset-2 hover:text-[#4801FF]"
+    >
+      <a target="_blank" rel="noopener noreferrer">
+        My Resume
+      </a>
+    </Link>
+  );
+}
+
 const Navbar = () => {
   return (
     <div className="container my-4 flex justify-between items-center mb-8">
@@ -37,6 +52,7 @@ const Navbar = () => {
       <div className="flex h-full  gap-4">
         <NavLink href="/" label="Home" />
         <NavLink href="/contact" label="Contact" />
+        <ResumeLink />
       </div>
     </div>
   );
