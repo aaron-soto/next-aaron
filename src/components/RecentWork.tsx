@@ -38,13 +38,14 @@ const RecentWork = () => {
           .
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-          <div className="bg-[#4801ff] w-full relative h-[320px] border rounded-lg overflow-hidden group">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
+          <div className="bg-[#4801ff] w-full relative h-[240px] border rounded-lg overflow-hidden group">
             <Image
               className="object-cover"
               src="/images/projects/case-study/thumbnail.png"
               alt="Case Study Project Thumbnail"
               fill
+              sizes="100%"
             />
             <div className="bg-[#4801ff] absolute inset-0 opacity-0 text-white text-lg gap-6 group-hover:opacity-100 transition-opacity duration-300 flex flex-col text-center p-4 justify-center items-center">
               <p>Coffee shop website for popular YouTuber William Douglas</p>
@@ -63,12 +64,13 @@ const RecentWork = () => {
               </Button>
             </div>
           </div>
-          <div className="bg-[#4801ff] w-full relative h-[320px] border rounded-lg overflow-hidden group">
+          <div className="bg-[#4801ff] w-full relative h-[240px] border rounded-lg overflow-hidden group">
             <Image
               className="object-cover"
               src="/images/projects/purpose-after-sports/thumbnail.png"
               alt="Case Study Project Thumbnail"
               fill
+              sizes="100%"
             />
             <div className="bg-[#4801ff] absolute inset-0 opacity-0 text-white text-lg gap-6 group-hover:opacity-100 transition-opacity duration-300 flex flex-col text-center p-4 justify-center items-center">
               <p>
@@ -82,6 +84,34 @@ const RecentWork = () => {
               >
                 <Link
                   href="https://purpose-after-sports.vercel.app/"
+                  target="_blank"
+                  onClick={() => trackLinkClick("purpose-after-sports")}
+                >
+                  View Website <ArrowRight size={24} />
+                </Link>
+              </Button>
+            </div>
+          </div>
+          <div className="bg-[#4801ff] w-full relative h-[240px] border rounded-lg overflow-hidden group">
+            <Image
+              className="object-cover"
+              src="/images/projects/repo-purge/thumbnail.png"
+              alt="Case Study Project Thumbnail"
+              fill
+              sizes="100%"
+            />
+            <div className="bg-[#4801ff] absolute inset-0 opacity-0 text-white text-lg gap-6 group-hover:opacity-100 transition-opacity duration-300 flex flex-col text-center p-4 justify-center items-center">
+              <p>
+                User Interface tool to allow users to delete multiple GitHub
+                repos easier.
+              </p>
+              <Button
+                variant="ghost"
+                className="border-2 border-white flex gap-4"
+                asChild
+              >
+                <Link
+                  href="https://repopurge.com"
                   target="_blank"
                   onClick={() => trackLinkClick("purpose-after-sports")}
                 >

@@ -3,6 +3,7 @@
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getMessaging } from "firebase/messaging";
 import { initializeApp } from "firebase/app";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -26,5 +27,6 @@ const auth = getAuth(app);
 const analytics =
   typeof window !== "undefined" && app.name ? getAnalytics(app) : null;
 const db = getFirestore(app);
+const messaging = typeof window !== "undefined" ? getMessaging() : null;
 
-export { app, auth, analytics, db };
+export { app, auth, analytics, db, messaging };
