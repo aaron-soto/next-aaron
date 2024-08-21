@@ -38,21 +38,23 @@ function ResumeLink() {
 
 const Navbar = () => {
   return (
-    <div className="container my-4 flex justify-between items-center mb-8">
-      <Link href="/">
-        <span
-          className={cn(
-            montserrat.className,
-            "text-xl font-black text-[#ff6e41]"
-          )}
-        >
-          Aaron Soto
-        </span>
-      </Link>
-      <div className="flex h-full  gap-4">
-        <NavLink href="/" label="Home" />
-        <NavLink href="/contact" label="Contact" />
-        <ResumeLink />
+    <div className="sticky top-0 z-100 bg-white py-4">
+      <div className="container flex justify-between items-center">
+        <Link href="/">
+          <span
+            className={cn(
+              montserrat.className,
+              "text-xl font-black text-[#ff6e41]"
+            )}
+          >
+            Aaron Soto
+          </span>
+        </Link>
+        <div className="flex h-full  gap-4">
+          <NavLink href="/" label="Home" />
+          <NavLink href="/contact" label="Contact" />
+          <ResumeLink />
+        </div>
       </div>
     </div>
   );

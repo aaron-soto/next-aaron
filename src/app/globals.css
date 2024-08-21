@@ -90,3 +90,94 @@ body {
 .underline-thick:hover {
   text-decoration-color: #6366f1;
 }
+
+article {
+  @apply text-gray-500;
+}
+
+article h1 {
+  @apply text-3xl font-bold;
+}
+
+article h2 {
+  @apply text-2xl font-bold;
+}
+
+article h3 {
+  @apply text-xl font-bold;
+}
+
+article h4 {
+  @apply text-lg font-bold;
+}
+
+article h5 {
+  @apply text-base font-bold;
+}
+
+article h6 {
+  @apply text-sm font-bold;
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  @apply text-neutral-800 font-bold font-sans mb-2;
+}
+
+article strong {
+  @apply font-bold text-neutral-800;
+}
+
+article p {
+  @apply mb-4;
+}
+
+article p a {
+  color: #4801ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: #e7deff;
+  transition: all 0.2s;
+}
+
+article p a:hover {
+  color: #4801ff;
+  text-decoration-color: #4801ff;
+}
+
+article figure {
+  @apply my-6;
+}
+
+article figure figcaption {
+  @apply text-center text-sm text-gray-500 mt-2;
+}
+
+article ul {
+  @apply space-y-2 my-4;
+}
+
+article ul li {
+  @apply list-disc ml-6;
+}
+
+article ul li::marker {
+  color: #4801ff !important;
+}
+
+article ul li a {
+  color: #4801ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: #e7deff;
+  transition: all 0.2s;
+}
+
+article ul li a:hover {
+  color: #4801ff;
+  text-decoration-color: #4801ff;
+}
