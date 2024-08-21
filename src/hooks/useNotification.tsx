@@ -15,7 +15,7 @@ const useNotification = () => {
         return;
       }
 
-      if (user && !isAdminUser(user)) {
+      if (user) {
         try {
           const permission = await Notification.requestPermission();
           if (permission === "granted") {
