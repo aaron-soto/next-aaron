@@ -1,4 +1,5 @@
 import { type ClassValue, clsx } from "clsx";
+import { User } from "firebase/auth";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -17,3 +18,9 @@ export const sanitizeInput = (input: string) => {
   const reg = /[&<>"'/]/gi;
   return input.replace(reg, (match) => map[match]);
 };
+
+export function isAdminUser(
+  user: User | (User & { isAdmin?: boolean })
+): user is User & { isAdmin: boolean } {
+  return (user as User & { isAdmin?: boolean }).isAdmin !== undefined;
+}

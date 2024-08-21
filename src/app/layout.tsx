@@ -2,6 +2,7 @@ import "./globals.css";
 
 import type { Metadata, Viewport } from "next";
 
+import { AuthProvider } from "@/hooks/useAuth";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Roboto } from "next/font/google";
@@ -163,10 +164,12 @@ export default function RootLayout({
           "relative min-h-screen antialiased flex flex-col"
         )}
       >
-        <Navbar />
-        <div className="flex-1">{children}</div>
-        <Footer />
-        <Toaster />
+        <AuthProvider>
+          <Navbar />
+          <div className="flex-1">{children}</div>
+          <Footer />
+          <Toaster />
+        </AuthProvider>
       </body>
     </html>
   );
