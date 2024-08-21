@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Montserrat } from "next/font/google";
 import React from "react";
+import { useRouter } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 
 const montserrat = Montserrat({

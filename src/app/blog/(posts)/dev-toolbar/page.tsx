@@ -1,3 +1,5 @@
+import BackButton from "@/components/BackButton";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -8,11 +10,12 @@ const BlogPost = () => {
 
   return (
     <>
-      <div className="w-full relative -z-10  min-h-[250px]">
-        <div className="inset-0 bg-green-300/30 -z-10 absolute"></div>
-        <header className="mx-auto max-w-xl flex flex-col h-full justify-end">
-          <h1 className="text-3xl font-[500] mb-8 mt-8">
-            Supercharge Your Frontend Development with a Custom `DevToolbar`
+      <div className="w-full relative  min-h-[250px]">
+        <div className="inset-0 bg-green-300/30 -z-10 pointer-events-none absolute"></div>
+        <header className="mx-auto max-w-xl px-4 md:px-0 pb-4 flex flex-col h-full justify-end">
+          <BackButton />
+          <h1 className="text-3xl font-[500] mb-8 ">
+            Supercharge Your Frontend Development with a Custom DevToolbar
           </h1>
           <div className="text-gray-500 text-sm">
             <p>By Aaron Soto</p>
@@ -205,7 +208,7 @@ export { DevButton };
               alt="DevToolbar in action"
               width={800}
               height={450}
-              className="rounded-lg"
+              className=""
             />
             <figcaption>DevToolbar filling a form with test data</figcaption>
           </figure>
@@ -222,7 +225,7 @@ export { DevButton };
               alt="DevToolbar resetting form"
               width={800}
               height={450}
-              className="rounded-lg"
+              className=""
             />
             <figcaption>DevToolbar resetting the form</figcaption>
           </figure>
@@ -245,7 +248,7 @@ export { DevButton };
               alt="DevToolbar testing UI states"
               width={800}
               height={450}
-              className="rounded-lg"
+              className=""
             />
             <figcaption>
               Testing different UI states with the DevToolbar
@@ -258,7 +261,7 @@ export { DevButton };
               alt="DevToolbar testing UI states"
               width={800}
               height={450}
-              className="rounded-lg"
+              className=""
             />
             <figcaption>
               Testing different UI states with the DevToolbar
@@ -323,31 +326,31 @@ export { DevButton };
           </p>
           <ul>
             <li>
-              <a
+              <Link
                 href="https://reactjs.org/docs/hooks-reference.html"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Official React Hooks Documentation
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 JavaScript Guide - MDN Web Docs
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 href="https://nextjs.org/docs"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Next.js Official Documentation
-              </a>
+              </Link>
             </li>
           </ul>
         </section>

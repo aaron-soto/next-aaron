@@ -5,7 +5,7 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="container">
+    <div className="container mt-8">
       <h1 className="text-4xl mb-8 font-black text-neutral-800">Blog</h1>
 
       <div className="grid grid-cols-2">

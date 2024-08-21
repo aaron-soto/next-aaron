@@ -162,7 +162,7 @@ article ul {
 }
 
 article ul li {
-  @apply list-disc ml-6;
+  @apply list-disc ml-8 md:ml-6;
 }
 
 article ul li::marker {
@@ -180,4 +180,18 @@ article ul li a {
 article ul li a:hover {
   color: #4801ff;
   text-decoration-color: #4801ff;
+}
+
+article p,
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  @apply mx-4 md:mx-0;
+}
+
+article img {
+  @apply rounded-none md:rounded-lg;
 }
