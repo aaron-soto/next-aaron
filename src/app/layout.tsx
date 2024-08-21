@@ -5,7 +5,9 @@ import type { Metadata, Viewport } from "next";
 import { AuthProvider } from "@/hooks/useAuth";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import PushNotifications from "@/lib/PushNotifications";
 import { Roboto } from "next/font/google";
+import ServiceWorker from "@/lib/ServiceWorker";
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 
@@ -165,6 +167,8 @@ export default function RootLayout({
         )}
       >
         <AuthProvider>
+          <ServiceWorker />
+          <PushNotifications />
           <Navbar />
           <div className="flex-1">{children}</div>
           <Footer />

@@ -31,7 +31,7 @@ const db = getFirestore(app);
 
 let messaging: ReturnType<typeof getMessaging> | null = null;
 
-async function initializeMessaging() {
+export async function initializeMessaging() {
   if (typeof window !== "undefined" && (await isSupported())) {
     messaging = getMessaging(app);
   }

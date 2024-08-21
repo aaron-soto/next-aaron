@@ -8,7 +8,9 @@ const Footer = () => {
       <ul className=" text-white mb-4 mt-2">
         <ul className="flex gap-4">
           {/* <Link href="/snippets">snippets</Link> */}
-          {/* <Link href="/blog">Blog</Link> */}
+          <Link className="text-white/20" href="/admin">
+            Admin
+          </Link>
         </ul>
       </ul>
       <p className="text-center text-gray-400 text-md">

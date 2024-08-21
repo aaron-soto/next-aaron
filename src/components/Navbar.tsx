@@ -174,14 +174,13 @@ const Navbar = () => {
             size="sm"
             className="rounded bg-[#4801FF] hover:bg-[#1e38de] text-white"
           >
-            <Link
+            <a
               href="/files/resume.pdf"
               target="_blank"
-              rel="noopener noreferrer"
               className="hover:underline underline-offset-2"
             >
               My Resume
-            </Link>
+            </a>
           </Button>
         </div>
 
