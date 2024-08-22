@@ -4,6 +4,7 @@ import { User, onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "@/lib/firebase/firebase";
 import { createContext, useContext, useEffect, useState } from "react";
 import { doc, getDoc, setDoc } from "firebase/firestore";
+import { getMessaging, getToken } from "firebase/messaging";
 
 // Define the shape of the context state, including the isAdmin property
 interface AuthContextType {
@@ -47,6 +48,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
             ...user,
             isAdmin,
           });
+        }
+
+        // Get and store the FCM token
+        const messaging = getMessaging();
+        try {
+          const fcmToken = await getToken(messaging, {
+            vapidKey: process.env.FIREBASE_VAPID_KEY,
+          });
+          if (fcmToken) {
+            await setDoc(userRef, { fcmToken }, { merge: true });
+          }
+        } catch (error) {
+          console.error("Error retrieving FCM token:", error);
         }
       } else {
         setUser(null);

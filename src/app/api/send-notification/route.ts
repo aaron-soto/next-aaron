@@ -14,7 +14,6 @@ export async function POST(request: Request) {
     },
     token: process.env.IPHONE_FCM_TOKEN!,
   };
-  console.log(message);
 
   try {
     if (!messaging) {

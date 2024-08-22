@@ -2,7 +2,7 @@
 
 import { Bebas_Neue, Montserrat } from "next/font/google";
 import { Menu, Sun } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 import { Button } from "@/components/ui/button";
@@ -121,6 +121,22 @@ const NavLink = ({ href, label, setIsOpen }: NavLinkProps) => {
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width: 768px)");
+
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/firebase-messaging-sw.js")
+        .then((registration) => {
+          console.log(
+            "Service Worker registered with scope:",
+            registration.scope
+          );
+        })
+        .catch((error) => {
+          console.error("Service Worker registration failed:", error);
+        });
+    }
+  }, []);
 
   const slideInVariants = {
     hidden: { y: 20, opacity: 0 },
