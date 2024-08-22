@@ -22,13 +22,12 @@ messaging.onBackgroundMessage((payload) => {
       .matchAll({ type: "window", includeUncontrolled: true })
       .then((clients) => clients.some((client) => client.focused))
   ) {
-    const notificationTitle =
-      payload.data?.title || "New message from your website";
+    const notificationTitle = payload.notification.title;
     const notificationOptions = {
-      body: payload.data?.body || "Check your email for the details",
+      body: payload.notification.body,
       icon: "./logo.png",
     };
 
-    self.registration.showNotification(notificationTitle, notificationOptions);
+    // self.registration.showNotification(notificationTitle, notificationOptions);
   }
 });
