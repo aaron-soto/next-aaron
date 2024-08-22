@@ -37,7 +37,7 @@ const Page = () => {
 
     submitContactForm(sanitizedData);
 
-    sendNotification();
+    sendNotification({ name: sanitizedData.name, email: sanitizedData.email });
 
     toast({
       title: "Success",
@@ -47,7 +47,7 @@ const Page = () => {
     reset();
   };
 
-  const sendNotification = async () => {
+  const sendNotification = async ({ name, email }: any) => {
     try {
       const response = await fetch("/api/send-notification", {
         method: "POST",
@@ -55,8 +55,8 @@ const Page = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          title: "New message from your website",
-          body: "Check your email for the details",
+          title: "New message from " + name,
+          body: `Email: ${email}`,
         }),
       });
 
