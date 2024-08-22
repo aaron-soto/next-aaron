@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   browserLocalPersistence,
   browserSessionPersistence,
@@ -33,6 +33,16 @@ const SignInPage: React.FC = () => {
   } = useForm<SignInFormValues>();
   const router = useRouter();
   const auth = getAuth();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        router.push("/admin");
+      }
+    });
+
+    return () => unsubscribe();
+  }, [auth, router]);
 
   const onSubmit = async (data: SignInFormValues) => {
     setLoading(true);
