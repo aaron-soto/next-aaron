@@ -2,6 +2,7 @@ import { doc, getDoc } from "firebase/firestore";
 
 import { NextResponse } from "next/server";
 import { db } from "@/lib/firebase/firebase";
+import { link } from "fs";
 import { messaging } from "@/lib/firebase/firebase-admin";
 
 export async function POST(request: Request) {
@@ -24,6 +25,9 @@ export async function POST(request: Request) {
     notification: {
       title,
       body,
+    },
+    data: {
+      link: "https://aaronsoto.io/admin",
     },
     token: tokenRes,
   };
