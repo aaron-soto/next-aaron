@@ -28,6 +28,6 @@ messaging.onBackgroundMessage((payload) => {
       icon: "./logo.png",
     };
 
-    // self.registration.showNotification(notificationTitle, notificationOptions);
+    self.registration.showNotification(notificationTitle, notificationOptions);
   }
 });
