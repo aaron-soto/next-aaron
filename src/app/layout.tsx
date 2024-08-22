@@ -167,13 +167,13 @@ export default function RootLayout({
         )}
       >
         <AuthProvider>
-          <ServiceWorker>
-            <PushNotifications />
-            <Navbar />
-            <div className="flex-1">{children}</div>
-            <Footer />
-            <Toaster />
-          </ServiceWorker>
+          {/* <ServiceWorker> */}
+          <PushNotifications />
+          <Navbar />
+          <div className="flex-1">{children}</div>
+          <Footer />
+          <Toaster />
+          {/* </ServiceWorker> */}
         </AuthProvider>
       </body>
     </html>

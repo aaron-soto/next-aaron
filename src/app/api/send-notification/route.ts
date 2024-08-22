@@ -1,9 +1,9 @@
 import { messaging } from "@/lib/firebase/firebase-admin";
 
 export async function POST(request: Request) {
-  const { token, title, body } = await request.json();
+  const { title, body } = await request.json();
 
-  if (!token || !title || !body) {
+  if (!title || !body) {
     return new Response("Missing required fields", { status: 400 });
   }
 
@@ -12,8 +12,9 @@ export async function POST(request: Request) {
       title,
       body,
     },
-    token,
+    token: process.env.IPHONE_FCM_TOKEN!,
   };
+  console.log(message);
 
   try {
     if (!messaging) {
