@@ -21,7 +21,7 @@ export async function POST(request: Request) {
   }
 
   const message = {
-    data: {
+    notification: {
       title,
       body,
     },
