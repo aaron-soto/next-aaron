@@ -1,10 +1,11 @@
+import { NextResponse } from "next/server";
 import { messaging } from "@/lib/firebase/firebase-admin";
 
 export async function POST(request: Request) {
   const { title, body } = await request.json();
 
   if (!title || !body) {
-    return new Response("Missing required fields", { status: 400 });
+    return NextResponse.json("Missing required fields", { status: 400 });
   }
 
   const message = {
@@ -17,12 +18,15 @@ export async function POST(request: Request) {
 
   try {
     if (!messaging) {
-      throw new Error("Messaging not initialized");
+      return new Response("Messaging not initialized", { status: 500 });
     }
 
     const response = await messaging.send(message);
-    return new Response(JSON.stringify(response), { status: 200 });
+    return NextResponse.json(response, { status: 200 });
   } catch (error: any) {
-    return new Response(error.message, { status: 500 });
+    return NextResponse.json(
+      { error: "Error fetching events" },
+      { status: 500 }
+    );
   }
 }
