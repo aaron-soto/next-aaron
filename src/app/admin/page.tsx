@@ -1,6 +1,7 @@
+//admin/page.tsx
 "use client";
 
-import { auth, initializeMessaging, messaging } from "@/lib/firebase/firebase";
+import { auth, initializeMessaging } from "@/lib/firebase/firebase";
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -8,7 +9,6 @@ import copy from "copy-to-clipboard";
 import { getToken } from "firebase/messaging";
 import { isAdminUser } from "@/lib/utils";
 import { redirect } from "next/navigation";
-import router from "next/router";
 import { signOut } from "firebase/auth";
 import { useAuth } from "@/hooks/useAuth";
 import { useState } from "react";
@@ -21,12 +21,10 @@ const AdminPage = () => {
 
   const generateToken = async () => {
     try {
+      const messaging = await initializeMessaging();
       if (!messaging) {
-        await initializeMessaging();
-        if (!messaging) {
-          console.error("Messaging still not initialized.");
-          return;
-        }
+        console.error("Messaging still not initialized.");
+        return;
       }
 
       const currentToken = await getToken(messaging, {
@@ -94,7 +92,6 @@ const AdminPage = () => {
         <Button
           size="sm"
           disabled={!token}
-          className=""
           onClick={() => {
             if (token) {
               copy(token);

@@ -1,4 +1,4 @@
-// Import the functions you need from the SDKs you need
+//firebase.ts
 
 import { getMessaging, isSupported } from "firebase/messaging";
 
@@ -7,11 +7,7 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase configuration
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
@@ -32,11 +28,11 @@ const db = getFirestore(app);
 let messaging: ReturnType<typeof getMessaging> | null = null;
 
 export async function initializeMessaging() {
+  if (messaging) return messaging;
   if (typeof window !== "undefined" && (await isSupported())) {
     messaging = getMessaging(app);
   }
+  return messaging;
 }
-
-initializeMessaging();
 
 export { app, auth, analytics, db, messaging };

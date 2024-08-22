@@ -123,7 +123,7 @@ const Navbar = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
-    if ("serviceWorker" in navigator) {
+    if ("serviceWorker" in navigator && !navigator.serviceWorker.controller) {
       navigator.serviceWorker
         .register("/firebase-messaging-sw.js")
         .then((registration) => {
