@@ -22,9 +22,10 @@ messaging.onBackgroundMessage((payload) => {
       .matchAll({ type: "window", includeUncontrolled: true })
       .then((clients) => clients.some((client) => client.focused))
   ) {
-    const notificationTitle = payload.notification.title;
+    const notificationTitle =
+      payload.data?.title || "New message from your website";
     const notificationOptions = {
-      body: payload.notification.body,
+      body: payload.data?.body || "Check your email for the details",
       icon: "./logo.png",
     };
 
