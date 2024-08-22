@@ -47,7 +47,7 @@ const SignInPage: React.FC = () => {
       await setPersistence(auth, persistence);
       await signInWithEmailAndPassword(auth, email, password);
 
-      router.push("/"); // Redirect after successful sign-in
+      router.push("/");
     } catch (error: any) {
       setError("email", {
         type: "manual",
