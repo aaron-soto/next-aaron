@@ -14,22 +14,21 @@ const PushNotifications = () => {
       const messaging = getMessaging(app);
       const unsubscribe = onMessage(messaging, (payload) => {
         console.log("Foreground push notification received:", payload);
+
         // Handle the received push notification while the app is in the foreground
-
         toast({
-          title: payload?.notification?.title!,
-          description: payload?.notification?.body!,
+          title: payload.notification?.title || "Notification",
+          description: payload.notification?.body || "You have a new message.",
         });
-
-        // You can display a notification or update the UI based on the payload
       });
+
       return () => {
         unsubscribe();
       };
     }
   }, []);
 
-  return <></>;
+  return null;
 };
 
 export default PushNotifications;

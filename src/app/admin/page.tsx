@@ -58,7 +58,28 @@ const AdminPage = () => {
   }
 
   const sendTestNotification = async () => {
-    console.log("Sending test notification");
+    const response = await fetch("/api/send-notification", {
+      method: "POST",
+      body: JSON.stringify({
+        token: process.env.IPHONE_FCM_TOKEN,
+        title: "Test notification",
+        body: "This is a test notification",
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.ok) {
+      toast({
+        title: "Notification sent",
+      });
+    } else {
+      toast({
+        title: "Error sending notification",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
