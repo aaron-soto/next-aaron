@@ -37,12 +37,35 @@ const Page = () => {
 
     submitContactForm(sanitizedData);
 
+    sendNotification();
+
     toast({
       title: "Success",
       description: "Your message has been sent successfully",
     });
 
     reset();
+  };
+
+  const sendNotification = async () => {
+    try {
+      const response = await fetch("/api/send-notification", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: "New message from your website",
+          body: "Check your email for the details",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Error sending notification");
+      }
+    } catch (error: any) {
+      console.error(error);
+    }
   };
 
   return (
