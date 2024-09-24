@@ -9,11 +9,11 @@ import { cn } from "@/lib/utils";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "700"] });
 
 const testimonialsData = [
-  {
-    text: `"Aaron is a great developer and designer. He was able to take our vision and bring it to life with his skills and creativity."`,
-    author: "William Douglas",
-    position: "CEO - Case Study Coffee Lounge",
-  },
+  // {
+  //   text: `"Aaron is a great developer and designer. He was able to take our vision and bring it to life with his skills and creativity."`,
+  //   author: "William Douglas",
+  //   position: "CEO - Case Study Coffee Lounge",
+  // },
   {
     text: `"Working with Aaron was a pleasure. He understands the requirements quickly and delivers outstanding results."`,
     author: "Former Coworker",
